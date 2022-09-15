@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital@1&display=swap");
+.card {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 40px;
+  font-family: "Libre Franklin", sans-serif;
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: url("https://t4.ftcdn.net/jpg/02/82/52/27/360_F_282522749_djynGWfHanPQZV5msvrVNRBaNwj7OACs.jpg");
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+  transition: 1s;
+}
+.card .imgBox {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  background: url("https://i2.wp.com/columbiafinishingmills.com/wp-content/uploads/Products/Cover-Material/Natuurlinen/Natuurlinen-2041.png?fit=400%2C400&ssl=1");
+  transition: 1s;
+}
+.card .imgBox img {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.card .details .contento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card .details .contento h1 {
+  color: rgb(35, 35, 35);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.card .details .contento h3 {
+  color: red;
+  font-weight: 100;
+  margin-top: 0;
+  padding-top: 0;
+}
+.card .details .contento p {
+  color: rgb(35, 35, 35);
+  font-size: calc(0.5em + 0.5vmin);
+  padding: 5px;
+}
+.card .details .button {
+  margin: 20px 0;
+  height: 20px;
+  width: 40px;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.card .details .button:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  -webkit-animation: glowing-button 20s linear infinite;
+          animation: glowing-button 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+@-webkit-keyframes glowing-button {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes glowing-button {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.card .details .button:after {
+  z-index: -1;
+  content: "VIEW SITE";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  vertical-align: middle;
+  line-height: 40px;
+}
+.card:hover {
+  transform: translateX(150px);
+}
+.card:hover .imgBox {
+  transform: rotateY(-180deg);
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 200px;
+    height: 300px;
+  }
+  .card:hover {
+    transform: translateX(100px);
+  }
+  .card .details .button {
+    height: 10px;
+    width: 20px;
+  }
+  .card .details .button::after {
+    font-size: small;
+    line-height: 30px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .card {
+    width: 150px;
+    height: 250px;
+  }
+  .card:hover {
+    transform: translateX(75px);
+  }
+  .card .details .button {
+    height: 5px;
+    width: 10px;
+  }
+  .card .details .button::after {
+    font-size: x-small;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .card {
+    width: 130px;
+    height: 250px;
+  }
+  .card:hover {
+    transform: translateX(65px);
+  }
+  .card .details .button {
+    width: 105px;
+    height: 30px;
+  }
+  .card .details .button:before {
+    width: 95px;
+    height: 20px;
+  }
+}/*# sourceMappingURL=Card.css.map */
